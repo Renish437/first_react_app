@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -8,14 +8,14 @@ export default function Navbar(props) {
         <nav className={`navbar navbar-expand-lg navbar-warning bg-body-grey`}>
           {/* ${props.mode} */}
           <div className="container-fluid">
-            <Link
+            <a
               className={`navbar-brand text-${
                 props.mode === "dark" ? "light" : "dark"
               }`}
-              to="/"
+              href="/"
             >
               {props.title}
-            </Link>
+            </a>
             <button
               className="navbar-toggler"
               type="button"
@@ -33,16 +33,16 @@ export default function Navbar(props) {
             >
               <ul className={`navbar-nav me-auto mb-2 mb-lg-0 `}>
                 <li className="nav-item">
-                  <Link
+                  <a
                     className={`nav-link active row p-4  data-bs-theme="light" text-${
                       props.mode === "dark" ? "light" : "dark"
                     }  `}
-                    to="/"
+                    href="/"
                   >
                     {props.home}
-                  </Link>
+                  </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     className={`nav-link row p-4  data-bs-theme="light" text-${
                       props.mode === "dark" ? "light" : "dark"
@@ -51,7 +51,7 @@ export default function Navbar(props) {
                   >
                     {props.about}
                   </Link>
-                </li>
+                </li> */}
               </ul>
               <div
                 className={`form-check form-switch text-${
