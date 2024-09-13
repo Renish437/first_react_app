@@ -1,11 +1,11 @@
 import "./Appa.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import logo from "./public/logo192.png";
 
@@ -70,33 +70,32 @@ function App() {
         </div>
       </Router> */}
 
-      {/* <Router> */}
-      <Navbar
-        title="TextUtils"
-        home="Home"
-        about="About us"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
-      <Alert alert={alert} />
-      <div className="container">
-        {/* <Routes> */}
-        {/* <Route exact path="/about" element={<About />} /> */}
-        {/* <Route
-         exact
-         path="/"
-         element={
-
-         }  /> */}
-
-        {/* </Routes> */}
-        <TextForm
-          heading="Enter the text to analyze"
+      <Router>
+        <Navbar
+          title="TextUtils"
+          home="Home"
+          about="About us"
           mode={mode}
-          showAlert={showAlert}
+          toggleMode={toggleMode}
         />
-      </div>
-      {/* </Router> */}
+        <Alert alert={alert} />
+        <div className="container">
+          <Routes>
+            <Route exact path="/about" element={<About />} />
+            <Route
+              exact
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter the text to analyze"
+                  mode={mode}
+                  showAlert={showAlert}
+                />
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
